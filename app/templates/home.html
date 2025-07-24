@@ -1,0 +1,56 @@
+{% extends "base.html" %} {% block title %}Home - URL Shortener{% endblock %} {%
+block head %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/home.css') }}"
+/>
+<!-- Font Awesome CDN -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  integrity="sha512-...your-integrity-hash..."
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+{% endblock %} {% block content %}
+<div class="home-wrapper">
+  <div class="form-card">
+    <h2><i class="fas fa-link"></i> Shorten Your URL</h2>
+
+    {% with messages = get_flashed_messages() %} {% if messages %}
+    <ul class="flash">
+      {% for message in messages %}
+      <li><i class="fas fa-info-circle"></i> {{ message }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %} {% endwith %}
+
+    <form method="POST">
+      <div class="input-group">
+        <i class="fas fa-globe"></i>
+        <input
+          type="url"
+          name="original_url"
+          placeholder="Paste your long URL here"
+          required
+        />
+      </div>
+
+      {% if session.get('user_id') %}
+      <div class="input-group">
+        <i class="fas fa-pencil-alt"></i>
+        <input
+          type="text"
+          name="custom_code"
+          placeholder="Custom short code (optional)"
+        />
+      </div>
+      {% endif %}
+
+      <button type="submit">
+        <i class="fas fa-magic"></i> Generate Short Link
+      </button>
+    </form>
+  </div>
+</div>
+{% endblock %}

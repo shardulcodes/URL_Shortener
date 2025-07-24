@@ -1,0 +1,103 @@
+{% extends "base.html" %} {% block title %}Register{% endblock %} {% block head
+%}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/auth.css') }}"
+/>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+
+{% endblock %} {% block content %}
+<div class="form-container">
+  <h2>Create Account</h2>
+
+  {% with messages = get_flashed_messages() %} {% if messages %}
+  <ul class="flash">
+    {% for message in messages %}
+    <li>{{ message }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %} {% endwith %}
+
+  <form method="POST" id="registerForm" novalidate>
+    <input type="text" name="username" placeholder="Username" required />
+
+    <input
+      type="password"
+      id="password"
+      name="password"
+      placeholder="Password"
+      required
+    />
+
+    <input
+      type="password"
+      id="confirm_password"
+      name="confirm_password"
+      placeholder="Confirm Password"
+      required
+    />
+
+    <div class="password-wrapper">
+      <ul id="password-checklist">
+        <li id="length" class="invalid">
+          <i class="fas fa-times-circle"></i> At least 8 characters
+        </li>
+        <li id="uppercase" class="invalid">
+          <i class="fas fa-times-circle"></i> 1 uppercase letter
+        </li>
+        <li id="lowercase" class="invalid">
+          <i class="fas fa-times-circle"></i> 1 lowercase letter
+        </li>
+        <li id="digit" class="invalid">
+          <i class="fas fa-times-circle"></i> 1 number
+        </li>
+        <li id="special" class="invalid">
+          <i class="fas fa-times-circle"></i> 1 special character (@$!%*?&)
+        </li>
+        <li id="match" class="invalid">
+          <i class="fas fa-times-circle"></i> Passwords match
+        </li>
+      </ul>
+    </div>
+
+    <button type="submit">Register</button>
+  </form>
+
+  <p>
+    Already have an account?
+    <a href="{{ url_for('auth.login') }}">Login</a>
+  </p>
+</div>
+
+<script>
+  const passwordInput = document.getElementById("password");
+  const confirmInput = document.getElementById("confirm_password");
+
+  const updateChecklist = (id, isValid) => {
+    const item = document.getElementById(id);
+    item.classList.toggle("valid", isValid);
+    item.classList.toggle("invalid", !isValid);
+    const icon = item.querySelector("i");
+    icon.className = isValid ? "fas fa-check-circle" : "fas fa-times-circle";
+  };
+
+  function validatePassword() {
+    const val = passwordInput.value;
+    updateChecklist("length", val.length >= 8);
+    updateChecklist("uppercase", /[A-Z]/.test(val));
+    updateChecklist("lowercase", /[a-z]/.test(val));
+    updateChecklist("digit", /\d/.test(val));
+    updateChecklist("special", /[@$!%*?&]/.test(val));
+    updateChecklist("match", val && val === confirmInput.value);
+  }
+
+  passwordInput.addEventListener("input", validatePassword);
+  confirmInput.addEventListener("input", validatePassword);
+</script>
+{% endblock %}

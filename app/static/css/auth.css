@@ -1,0 +1,113 @@
+.form-container {
+  max-width: 450px;
+  margin: 40px auto;
+  padding: 2rem;
+  border-radius: 16px;
+  background: linear-gradient(to bottom right, #ffffff, #f3f7ff);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+  font-family: "Segoe UI", sans-serif;
+  transition: all 0.3s ease-in-out;
+}
+
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #2d2d2d;
+  font-size: 1.6rem;
+}
+
+.form-container input[type="text"],
+.form-container input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 1.2rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: 0.2s ease;
+  outline: none;
+}
+
+.form-container input:focus {
+  border-color: #3477db;
+  box-shadow: 0 0 5px rgba(52, 119, 219, 0.3);
+}
+
+.form-container button {
+  width: 100%;
+  padding: 12px;
+  background-color: #3477db;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.25s ease;
+}
+
+.form-container button:hover {
+  background-color: #245fba;
+}
+
+.form-container p {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+
+.flash {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+  background-color: #ffe0e0;
+  color: #b00020;
+  border: 1px solid #ffc0c0;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.flash li {
+  padding: 0.7rem 1rem;
+}
+
+/* Password checklist */
+.password-wrapper {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: #333;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+#password-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#password-checklist li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  opacity: 0.9;
+  transition: color 0.2s;
+}
+
+#password-checklist li i {
+  margin-right: 0.6rem;
+  font-size: 0.9rem;
+}
+
+#password-checklist li.valid {
+  color: #28a745;
+}
+
+#password-checklist li.invalid {
+  color: #dc3545;
+}

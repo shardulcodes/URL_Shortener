@@ -1,0 +1,95 @@
+/* Base Styling */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #f7f9fc;
+  color: #222;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+  transition: 0.3s ease;
+}
+
+a:hover {
+  color: #0077ff;
+}
+
+/* Container */
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Header */
+header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #eaeaea;
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo a {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #0077ff;
+}
+
+/* Nav Buttons */
+nav {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.btn {
+  padding: 6px 14px;
+  border-radius: 6px;
+  background-color: #eaeaea;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.btn.primary {
+  background-color: #0077ff;
+  color: white;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+/* Main */
+main {
+  flex: 1;
+  padding: 40px 0;
+}
+
+/* Footer */
+footer {
+  background-color: #f0f0f0;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #555;
+  border-top: 1px solid #ddd;
+}
