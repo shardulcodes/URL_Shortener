@@ -1,8 +1,4 @@
-Absolutely, here's the **revised `README.md`** with **no emojis**, written professionally and thoroughly:
 
----
-
-```markdown
 # URL Shortener Web Application
 
 A modern, secure, and user-friendly web application built with **Flask** that allows users to shorten long URLs, create custom aliases, and manage their own personalized dashboard with authentication.
@@ -163,11 +159,7 @@ Real-time feedback is provided on the frontend using JavaScript and Font Awesome
 
 ---
 
-## License
 
-This project is licensed under the [MIT License](LICENSE).
-
----
 
 ## Author
 
