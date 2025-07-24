@@ -1,0 +1,52 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+ENV/
+.venv/
+
+# VS Code settings (optional)
+.vscode/
+
+# PyCharm settings (optional)
+.idea/
+
+# Flask instance folder and config overrides
+instance/
+*.env
+.env.*
+
+# SQLite database
+*.db
+*.sqlite3
+
+# Logs and test cache
+*.log
+*.pytest_cache/
+coverage/
+
+# Compiled HTML, static asset cache
+*.map
+
+# MacOS
+.DS_Store
+
+# Linux/Unix
+*~
+
+# Windows
+Thumbs.db
+ehthumbs.db
+
+# Node/npm cache (if frontend build exists)
+node_modules/
+
+# Test coverage reports
+htmlcov/
+
+# GitHub Actions secrets and cache (optional)
+.github/
